@@ -11,7 +11,7 @@ export function getGreatestDiscoveryYear(data) {
   // feel free to import your `maxBy` or `minBy` methods from previous lessons
   let countForYear = data.asteroids
     .reduce((count, asteroid) => {
-      count[asteroid.discoveryYear] = (count[asteroid.discovery] || 0) + 1;
+      count[asteroid.discoveryYear] = (count[asteroid.discoveryYear] || 0) + 1;
       return count;
     }, {});
     return parseInt(maxBy(Object.keys(countForYear), year => countForYear[year]), 10);
