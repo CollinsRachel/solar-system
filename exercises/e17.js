@@ -10,12 +10,38 @@
 
 export function minBy(array, cb) {
   // Your code goes here...
+  if(!Array.isArray(array) || array.length == 0) {
+    return undefined;
+  }
+  let minVal = cb(array[0]);
+  let minValPos = array[0];
 
+  for(let i = 1; i < array.length; i++) {
+    let currentVal = cb(array[i]);
+    if(currentVal < minVal) {
+      minVal = currentVal;
+      minValPos = array[i];
+    }
+  }
+  return minValPos;
 }
 
 export function maxBy(array, cb) {
   // Your code goes here...
+  if(!Array.isArray(array)|| array.length == 0) {
+    return undefined;
+  }
+  let maxVal = cb(array[0]);
+  let maxValPos = array[0];
 
+  for (let i = 1; i < array.length; i++) {
+    let currentVal = cb(array[i]);
+    if(currentVal > maxVal) {
+      maxVal = currentVal;
+      maxValPos = array[i];
+    }
+  }
+  return maxValPos;
 }
 
 
